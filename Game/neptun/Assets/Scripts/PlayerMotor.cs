@@ -29,11 +29,11 @@ public class PlayerMotor : MonoBehaviour
         if (InputManager.Instance.GetSprint())
         {
             if (isGrounded)
-            speed = 8;
+            speed = 10;
         }
         else
         {
-            speed = 5;
+            speed = 7;
         }
 
         isGrounded = controller.isGrounded;
