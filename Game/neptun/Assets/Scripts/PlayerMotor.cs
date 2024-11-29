@@ -26,14 +26,22 @@ public class PlayerMotor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (InputManager.Instance.GetSprint())
+        if (!crouching)
         {
-            if (isGrounded)
-            speed = 10;
+            speed = 7;
+            if (InputManager.Instance.GetSprint())
+            {
+                if (isGrounded)
+                    speed = 10;
+            }
+            else
+            {
+                speed = 7;
+            }
         }
         else
         {
-            speed = 7;
+            speed = 3;
         }
 
         isGrounded = controller.isGrounded;
