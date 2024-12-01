@@ -32,15 +32,21 @@ public class PlayerMotor : MonoBehaviour
             if (InputManager.Instance.GetSprint())
             {
                 if (isGrounded)
+                    HeadbobSystem.Instance.Frequency = 20f;
+                    HeadbobSystem.Instance.Amount = 0.08f;
                     speed = 10;
             }
             else
             {
+                HeadbobSystem.Instance.Frequency = 10f;
+                HeadbobSystem.Instance.Amount = 0.05f;
                 speed = 7;
             }
         }
         else
         {
+            HeadbobSystem.Instance.Frequency = 8f;
+            HeadbobSystem.Instance.Amount = 0.02f;
             speed = 3;
         }
 
