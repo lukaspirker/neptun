@@ -9,7 +9,7 @@ public class PlayerMotor : MonoBehaviour
     private Vector3 playerVelocity;
     private bool isGrounded;
     public float speed;
-    public float gravity = -9.8f;
+    public float gravity = -20f;
     public float jumpHeight = 3f;
 
     private bool lerpCrouch;
@@ -17,9 +17,15 @@ public class PlayerMotor : MonoBehaviour
 
     private float crouchTimer;
 
+    void Awake()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;    
+    }
+
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         controller = GetComponent<CharacterController>();
     }
 
@@ -85,7 +91,7 @@ public class PlayerMotor : MonoBehaviour
     {
         if (isGrounded)
         {
-            playerVelocity.y = Mathf.Sqrt(jumpHeight - 3.0f * gravity);
+            playerVelocity.y = Mathf.Sqrt(jumpHeight - 2.5f * gravity);
         }
     }
 
