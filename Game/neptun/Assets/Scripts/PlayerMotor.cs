@@ -34,26 +34,26 @@ public class PlayerMotor : MonoBehaviour
     {
         if (!crouching)
         {
-            speed = 7;
+            speed = 4;
             if (InputManager.Instance.GetSprint())
             {
                 if (isGrounded)
-                    HeadbobSystem.Instance.Frequency = 20f;
-                    HeadbobSystem.Instance.Amount = 0.08f;
-                    speed = 10;
+                    HeadbobSystem.Instance.Frequency = 18f;
+                    HeadbobSystem.Instance.Amount = 0.07f;
+                    speed = 7;
             }
             else
             {
-                HeadbobSystem.Instance.Frequency = 10f;
-                HeadbobSystem.Instance.Amount = 0.05f;
-                speed = 7;
+                HeadbobSystem.Instance.Frequency = 9f;
+                HeadbobSystem.Instance.Amount = 0.04f;
+                speed = 4;
             }
         }
         else
         {
-            HeadbobSystem.Instance.Frequency = 8f;
-            HeadbobSystem.Instance.Amount = 0.02f;
-            speed = 3;
+            HeadbobSystem.Instance.Frequency = 6f;
+            HeadbobSystem.Instance.Amount = 0.01f;
+            speed = 2;
         }
 
         isGrounded = controller.isGrounded;
