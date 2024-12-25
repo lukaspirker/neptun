@@ -31,8 +31,8 @@ public class HeadbobSystem : MonoBehaviour
             instance = this;
         }
     }
-        // Start is called before the first frame update
-        void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         StartPos = transform.localPosition;
     }
@@ -40,7 +40,7 @@ public class HeadbobSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckForHeadbobTrigger();   
+        CheckForHeadbobTrigger();
     }
 
     private void CheckForHeadbobTrigger()
@@ -64,7 +64,7 @@ public class HeadbobSystem : MonoBehaviour
 
     private void StopHeadbob()
     {
-        if(transform.localPosition == StartPos) return;
-        transform.localPosition = Vector3.Lerp(transform.localPosition,StartPos, 1* Time.deltaTime);
+        if (transform.localPosition == StartPos) return;
+        transform.localPosition = Vector3.Lerp(transform.localPosition, StartPos, 1 * Time.deltaTime);
     }
 }
