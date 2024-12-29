@@ -40,7 +40,10 @@ public class HeadbobSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckForHeadbobTrigger();
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            CheckForHeadbobTrigger();
+        }
     }
 
     private void CheckForHeadbobTrigger()
